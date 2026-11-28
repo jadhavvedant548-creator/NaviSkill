@@ -1,7 +1,0 @@
-# Deployment guide
-1. Extract ZIP. Open NaviSkill_Offline.html in Chrome/Edge; disconnect internet and test core activities. Keep V14 and original deployment as backup.
-2. Create a GitHub repository and upload the extracted contents (not the ZIP alone). Keep index.html, api/guide.js, sw.js, icon.svg, manifest.webmanifest and vercel.json at the repository root. Do not commit .env or real keys.
-3. Import repository at https://vercel.com/dashboard. Framework preset Other; root is the folder containing index.html and api; no custom build command. Deploy preview first.
-4. Create key at https://aistudio.google.com/apikey. Select a supported generateContent model from https://ai.google.dev/gemini-api/docs/models. In Vercel Settings > Environment Variables add GEMINI_API_KEY, GEMINI_MODEL (exact ID), NAVISKILL_ACCESS_CODE (random private 16–128 characters). Set correct environment and redeploy. Check provider quotas and billing.
-5. Open deployed HTTPS site, NaviAI, enter exhibition access code (not API key), tick consent, ask a fictional digital-literacy question online. Test wrong code, missing consent and offline fallback. Never paste real OTP, phone, Aadhaar or bank details.
-6. Confirm browser network request goes to /api/guide, not Google directly; no API key in browser. Verify response headers and hosted offline reload after service worker activates. Test voice, print, mobile, all activities and persistence. Rotate access code after event; keep standalone file available.
